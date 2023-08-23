@@ -15,8 +15,8 @@ Paper Link: [arxiv](https://arxiv.org/abs/2306.02763) | [CVPR 2023](https://open
 
 ## Dependencies
 
-* python==3.7.3
-* PyTorch=1.6.0
+* python==3.10
+* PyTorch=2.0.1
 * requirements.txt
 
 ## Dataset Preparation
@@ -62,7 +62,7 @@ Paper Link: [arxiv](https://arxiv.org/abs/2306.02763) | [CVPR 2023](https://open
 python main.py --mode=train --device_ids=0,1,2,3 \
                --image_dir=${image_dir} --annot_dir=${annot_dir} \
                --data_definition={WFLW, 300W, COFW} \
-               --ckpt_dir=${out_dir} \
+               --ckpt_dir=${out_dir} 
 ```
 
 The batch_size parameter may need to be set depending on available GPU memory. e.g "--batch_size=16"
@@ -73,7 +73,7 @@ python main.py --mode=test --device_ids=0 \
                --image_dir=${image_dir} --annot_dir=${annot_dir} \
                --data_definition={WFLW, 300W, COFW} \
                --pretrained_weight=${model_path} \
-               --ckpt_dir=${out_dir} \
+               --ckpt_dir=${out_dir} 
 ```
 
 ### Evaluation
@@ -81,7 +81,7 @@ python main.py --mode=test --device_ids=0 \
 python evaluate.py --device_ids=0 \
                    --model_path=${model_path} --metadata_path=${metadata_path} \
                    --image_dir=${image_dir} --data_definition={WFLW, 300W, COFW} \ 
-                   --ckpt_dir=${out_dir} \
+                   --ckpt_dir=${out_dir} 
 ```
 
 
