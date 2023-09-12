@@ -79,6 +79,11 @@ python evaluate.py --device_ids=0 \
                    --image_dir=${image_dir} --data_definition={WFLW, 300W, COFW} \ 
 ```
 
+To test on your own image, the following code could be considered:
+```shell
+python demo.py
+```
+
 
 ## Results
 The models trained by STAR Loss achieved **SOTA** performance in all of COFW, 300W and WFLW datasets.
