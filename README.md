@@ -15,9 +15,15 @@ Paper Link: [arxiv](https://arxiv.org/abs/2306.02763) | [CVPR 2023](https://open
 
 ## Dependencies
 
-* python==3.10
-* PyTorch=2.0.1
-* requirements.txt
+Install dependencies for python 3.7 using:
+
+* pip install -r requirements-py37.txt
+
+Install dependencies for python 3.10 using:
+
+* pip install -r requirements-py310.txt
+
+You may need to install a different pytorch build, depending on your GPU support in CUDA https://pytorch.org/get-started/previous-versions/
 
 ## Dataset Preparation
 
