@@ -1,0 +1,20 @@
+tqdm==4.66.1
+torch==1.13.1
+torchvision==0.14.1
+# python-gflags==3.1.2
+pandas==2.0.3
+pillow==10.0.0
+numpy==1.25.2
+opencv-python==4.8.0.76
+imageio==2.31.1
+# imgaug
+# lmdb
+# lxml
+tensorboard==2.14.0
+protobuf==4.24.1
+tensorboardX==2.6.2.2
+scikit-image==0.21.0
+# pyarrow==0.17.1
+# wandb==0.10.25
+# https://pytorch.org/get-started/previous-versions/
+# pip install torch==1.6.0+cpu torchvision==0.7.0+cpu -f https://download.pytorch.org/whl/torch_stable.html

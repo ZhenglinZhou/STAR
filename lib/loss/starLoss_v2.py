@@ -2,6 +2,7 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 from torch.autograd import Variable
+torch_ver = torch.__version__.split('.')
 
 from .smoothL1Loss import SmoothL1Loss
 from .wingLoss import WingLoss
@@ -136,7 +137,10 @@ class STARLoss_v2(nn.Module):
         # TODO: GPU-based eigen-decomposition
         # https://github.com/pytorch/pytorch/issues/60537
         _covars = covars.view(bs * npoints, 2, 2).cpu()
-        evalues, evectors = _covars.symeig(eigenvectors=True)  # evalues [bs * 68, 2], evectors [bs * 68, 2, 2]
+        if int(torch_ver[0]) > 1 or (int(torch_ver[0]) == 1 and int(torch_ver[1]) >= 8):
+            evalues, evectors = torch.linalg.eigh(_covars)  # evalues [bs * 68, 2], evectors [bs * 68, 2, 2]
+        else:
+            evalues, evectors = _covars.symeig(eigenvectors=True) # Pre-torch 1.8
         evalues = evalues.view(bs, npoints, 2).to(heatmap)
         evectors = evectors.view(bs, npoints, 2, 2).to(heatmap)
 

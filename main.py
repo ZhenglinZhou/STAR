@@ -7,7 +7,7 @@ def add_data_options(parser):
     group = parser.add_argument_group("dataset")
     group.add_argument("--image_dir", type=str, default=None, help="the directory of image")
     group.add_argument("--annot_dir", type=str, default=None, help="the directory of annot")
-
+    group.add_argument("--ckpt_dir", type=str, default=None, help="the output directory of checkpoints and logs")
 
 def add_base_options(parser):
     group = parser.add_argument_group("base")
