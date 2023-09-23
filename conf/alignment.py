@@ -42,7 +42,7 @@ class Alignment(Base):
 
         # batch_size & workers
         self.batch_size = 32
-        self.train_num_workers = 4
+        self.train_num_workers = 16
         self.val_batch_size = 32
         self.val_num_workers = 16
         self.test_batch_size = 16

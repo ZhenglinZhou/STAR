@@ -20,6 +20,7 @@ from lib.metric import NME, FR_AUC
 from lib.utils import convert_secs2time
 from lib.utils import AverageMeter
 
+torch_ver = torch.__version__.split('.')
 
 def get_config(args):
     config = None
@@ -142,6 +143,10 @@ def get_net(config):
                              nstack=config.nstack,
                              add_coord=config.add_coord,
                              decoder_type=config.decoder_type)
+
+        # In future (torch 2.0), we may wish to compile the model but this currently doesn't work
+        #if int(torch_ver[0]) >= 2:
+        #    net = torch.compile(net)
     else:
         assert False
     return net
